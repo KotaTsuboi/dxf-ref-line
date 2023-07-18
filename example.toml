@@ -1,0 +1,6 @@
+num_x_axis = 6
+num_y_axis = 8
+num_floor = 3
+x_spans = [7000, 7000, 7000, 7000, 7000]
+y_spans = [7000, 7000, 7000, 7000, 7000, 7000, 7000]
+floor_heights = [3500, 3500]
