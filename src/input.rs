@@ -18,10 +18,25 @@ pub struct RefLine {
     y_spans: Vec<f64>,
     #[getset(get = "pub")]
     floor_heights: Vec<f64>,
+    x_axes: Option<Vec<String>>,
+    y_axes: Option<Vec<String>>,
+    floor_names: Option<Vec<String>>,
     layer_name: Option<LayerName>,
 }
 
 impl RefLine {
+    pub fn x_axes(&self) -> Vec<String> {
+        self.x_axes
+            .clone()
+            .unwrap_or_else(|| (1..=self.num_x_axis).map(|i| format!("X{}", i)).collect())
+    }
+
+    pub fn y_axes(&self) -> Vec<String> {
+        self.y_axes
+            .clone()
+            .unwrap_or_else(|| (1..=self.num_y_axis).map(|i| format!("Y{}", i)).collect())
+    }
+
     pub fn layer_name(&self) -> LayerName {
         self.layer_name.clone().unwrap_or(LayerName {
             ref_line: Some("通り芯".to_string()),
