@@ -1,5 +1,5 @@
 [package]
-name = "dxf-ref-line"
+name = "stdr-refline"
 version = "0.1.0"
 edition = "2021"
 
